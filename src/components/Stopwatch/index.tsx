@@ -11,7 +11,7 @@ export const Stopwatch = () => {
                 <Watch />
             </div>
 
-            <Button title="Começar"/>
+            <Button type="button" title="Começar"/>
         </div>
     );
 }
