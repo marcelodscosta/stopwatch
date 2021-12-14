@@ -4,7 +4,10 @@ import Button from '../Button';
 import style from "./Form.module.scss";
 import { v4 as uuidv4} from 'uuid';
 
-class Form extends React.Component <{setTaskList: React.Dispatch<React.SetStateAction<Itask[]>>
+
+
+class Form extends React.Component <{
+    setTaskList: React.Dispatch<React.SetStateAction<Itask[]>>
 }>{
     state = {
         task: "",
