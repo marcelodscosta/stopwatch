@@ -17,8 +17,8 @@ export const Item = ({
 return (
     <li 
     className={ `${style.item} 
-    ${select ? style.itemSelecionado : ''} ` }
-    onClick={()=> selectTask({
+    ${select ? style.itemSelecionado : ''} ${complet ? style.itemCompletado : ''} ` }
+    onClick={()=> !complet && selectTask({
         task,
         complet,
         id,
@@ -28,6 +28,7 @@ return (
     >
         <h3>{ task }</h3>
         <span>{ time }</span>
+        { complet && <span className={style.concluido} aria-label="Tarefa Concluida"></span>}
     </li>
 )
 

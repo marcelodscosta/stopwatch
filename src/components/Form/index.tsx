@@ -66,6 +66,7 @@ class Form extends React.Component <{setTaskList: React.Dispatch<React.SetStateA
             <Button 
             title="Adicionar"
             type="submit"
+            onClick={()=> console.log("Clicado Form")}
             />
             </form>
         );

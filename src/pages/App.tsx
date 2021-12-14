@@ -15,14 +15,33 @@ const App = () => {
       ...task,
       select: task.id === taskSelect.id ? true : false,
     })));
-    console.log(select);
+  }
+
+  const endTask = () => {
+    if(select) {
+      setTaskList(ant => ant.map(task => {
+        if(task.id === select.id){
+          return {
+            ...task,
+            select: false,
+            complet: true,
+          }
+        } else {
+          return task;
+        }
+        
+      }))
+    }
   }
 
   return (
    <div className={style.AppStyle}>
      <Form setTaskList={ setTaskList }/>
      <List taskList={ taskList } selectTask={ selectTask }/>
-     <Stopwatch />
+     <Stopwatch 
+     select = { select }
+     endTask = { endTask }
+     />
    </div>
   );
 }
